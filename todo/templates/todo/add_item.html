@@ -8,7 +8,13 @@
     <h1>Add a To-Do item</h1>
     <form method="POST" action="add">
         {% csrf_token %}
-        <div>
+        {{ form.as_p }}
+        <!-- .as_p is like add <p> tags to the form in the example below -->
+        <!-- We could also use .as_table to use a table formatt -->
+        
+        <!-- The template "form" tag above replaces the commented out html code below.  It will now be automatically generate from the database -->
+        <!-- using the details contained within forms.py -->
+        <!-- <div>
             <p>
                 <label for="id_name">Name: </label>
                 <input type="text" id="id_name" name="item_name" />
@@ -19,7 +25,7 @@
                 <label for="id_done">Done! </label>
                 <input type="checkbox" id="id_done" name="done" />
             </p>
-        </div>
+        </div> -->
         <div>
             <p>
                 <button type="submit">Add Item</button>
